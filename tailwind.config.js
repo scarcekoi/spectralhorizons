@@ -5,10 +5,9 @@ import typographyPlugin from '@tailwindcss/typography';
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,json,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
-    colors: {
-      primary: 'var(--aw-color-primary)',
-      transparent: 'transparent',
-    },
+      colors: {
+        primary: 'var(--aw-color-primary)',
+      },
     extend: {
       colors: {
         primary: 'var(--aw-color-primary)',
@@ -16,27 +15,11 @@ export default {
         accent: 'var(--aw-color-accent)',
         default: 'var(--aw-color-text-default)',
         muted: 'var(--aw-color-text-muted)',
-        blue: {
-          500: '#3b82f6', // Explicitly adding blue-500 if it's missing
-        },
       },
       fontFamily: {
         sans: ['var(--aw-font-sans, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
         serif: ['var(--aw-font-serif, ui-serif)', ...defaultTheme.fontFamily.serif],
         heading: ['var(--aw-font-heading, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
-      },
-
-      // Ring and focus:ring
-      ringWidth: {
-        1: '1px',
-        2: '2px',
-        4: '4px',
-        8: '8px',
-      },
-
-      // Optionally add custom blue shade for `focus:ring-blue-500`
-      ringColor: {
-        blue: '#3b82f6', // Adding a custom ring blue if needed
       },
 
       animation: {
@@ -56,7 +39,7 @@ export default {
     plugin(({ addVariant }) => {
       addVariant('intersect', '&:not([no-intersect])');
     }),
-    require('@catppuccin/tailwindcss'),
+    require("@catppuccin/tailwindcss"),
   ],
   darkMode: 'class',
 };
