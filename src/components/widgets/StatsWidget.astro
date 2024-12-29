@@ -9,7 +9,7 @@ import { Icon } from 'astro-icon/components';
   <WidgetWrapper id="dynamic-stats-widget" isDark={false} containerClass="max-w-6xl mx-auto" bg="">
 
     <!-- Headline for Stats -->
-    <Headline title="Dynamic Stats" subtitle="Live updates for YouTube and Twitter" />
+    <Headline title="YouTube Statistics"" />
 
     <!-- Stats Layout -->
     <div class="flex flex-wrap justify-center -m-4 text-center">
@@ -43,22 +43,10 @@ import { Icon } from 'astro-icon/components';
         </div>
         <div class="text-sm font-medium uppercase tracking-widest text-gray-800 dark:text-slate-400 lg:text-base">YouTube Views</div>
       </div>
-
-      <!-- Twitter Stats -->
-      <div class="p-4 md:w-1/4 sm:w-1/2 w-full min-w-[220px] text-center">
-        <div class="flex items-center justify-center mx-auto mb-4 text-primary">
-          <Icon name="tabler:brand-twitter" class="w-10 h-10" />  <!-- Twitter Icon -->
-        </div>
-        <div class="font-heading text-primary text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl" id="twitter-followers">
-          Loading...
-        </div>
-        <div class="text-sm font-medium uppercase tracking-widest text-gray-800 dark:text-slate-400 lg:text-base">Twitter Followers</div>
-      </div>
     </div>
   </WidgetWrapper>
 
   <script>
-    // Fetch YouTube Stats from the serverless function
     const fetchYouTubeStats = async () => {
       const response = await fetch('/api/youtube');
       const data = await response.json();
@@ -66,25 +54,12 @@ import { Icon } from 'astro-icon/components';
       return data;
     };
 
-    // Fetch Twitter Stats from the serverless function
-    const fetchTwitterFollowers = async () => {
-      const response = await fetch('/api/twitter');
-      const data = await response.json();
-      return data.followers;
-    };
-
-    // Update Stats in DOM
     const updateStats = async () => {
       const youtubeStats = await fetchYouTubeStats();
-      const twitterFollowers = await fetchTwitterFollowers();
 
-      // Update YouTube stats
       document.getElementById('youtube-subscribers').textContent = youtubeStats.subscribers;
       document.getElementById('youtube-videos').textContent = youtubeStats.videos;
       document.getElementById('youtube-views').textContent = youtubeStats.views;
-
-      // Update Twitter followers
-      document.getElementById('twitter-followers').textContent = twitterFollowers;
     };
 
     // Call the update function when the page loads
