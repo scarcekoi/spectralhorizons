@@ -16,22 +16,27 @@ export default {
         accent: 'var(--aw-color-accent)',
         default: 'var(--aw-color-text-default)',
         muted: 'var(--aw-color-text-muted)',
-        gray: {
-          100: '#f7fafc',
-          200: '#edf2f7',
-          300: '#e2e8f0',
-          400: '#cbd5e0',
-          500: '#a0aec0',
-          600: '#718096',
-          700: '#4a5568',
-          800: '#2d3748',
-          900: '#1a202c',
+        blue: {
+          500: '#3b82f6', // Explicitly adding blue-500 if it's missing
         },
       },
       fontFamily: {
         sans: ['var(--aw-font-sans, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
         serif: ['var(--aw-font-serif, ui-serif)', ...defaultTheme.fontFamily.serif],
         heading: ['var(--aw-font-heading, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
+      },
+
+      // Ring and focus:ring
+      ringWidth: {
+        1: '1px',
+        2: '2px',
+        4: '4px',
+        8: '8px',
+      },
+
+      // Optionally add custom blue shade for `focus:ring-blue-500`
+      ringColor: {
+        blue: '#3b82f6', // Adding a custom ring blue if needed
       },
 
       animation: {
