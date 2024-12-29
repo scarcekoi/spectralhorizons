@@ -1,7 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
-import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
@@ -12,12 +11,11 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
+  <HeroText tagline="Contact" title="Where to Reach Us!" />
 
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="We are here to help!"
     items={[
       {
         title: 'Email',
