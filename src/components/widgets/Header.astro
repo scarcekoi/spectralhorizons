@@ -50,7 +50,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 <header
   class:list={[
     { sticky: isSticky, relative: !isSticky, dark: isDark },
-    'top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out',
+    'top-0 z-40 flex-none mx-auto w-full border-b border-base/0 transition-[opacity] ease-in-out',
   ]}
   {...isSticky ? { 'data-aw-sticky-header': true } : {}}
   {...id ? { id } : {}}
@@ -58,7 +58,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
   <div class="absolute inset-0"></div>
   <div
     class:list={[
-      'relative text-default py-3 px-3 md:px-6 mx-auto w-full',
+      'relative text-text py-3 px-3 md:px-6 mx-auto w-full',
       {
         'md:flex md:justify-between': position !== 'center',
       },
@@ -79,7 +79,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       </div>
     </div>
     <nav
-      class="items-center w-full md:w-auto hidden md:flex md:mx-5 text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:justify-self-center"
+      class="items-center w-full md:w-auto hidden md:flex md:mx-5 text-text overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:justify-self-center"
       aria-label="Main navigation"
     >
       <ul
@@ -92,7 +92,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                 <>
                   <button
                     type="button"
-                    class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap"
+                    class="hover:text-mauve dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap"
                   >
                     {text}{' '}
                     <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" />
@@ -102,7 +102,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                       <li>
                         <a
                           class:list={[
-                            'first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap',
+                            'first:rounded-t last:rounded-b md:hover:bg-lavender hover:text-mauve dark:hover:text-white dark:hover:bg-mauve py-2 px-5 block whitespace-no-wrap',
                             { 'aw-link-active': href2 === currentPath },
                           ]}
                           href={href2}
@@ -116,7 +116,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
               ) : (
                 <a
                   class:list={[
-                    'hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap',
+                    'hover:text-mauve dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap',
                     { 'aw-link-active': href === currentPath },
                   ]}
                   href={href}
@@ -141,7 +141,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
           {
             showRssFeed && (
               <a
-                class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                class="text-subtext0 dark:text-subtext0 hover:bg-lavender dark:hover:bg-mauve focus:outline-none focus:ring-4 focus:ring-mauve dark:focus:ring-mauve rounded-lg text-sm p-2.5 inline-flex items-center"
                 aria-label="RSS Feed"
                 href={getAsset('/rss.xml')}
               >
