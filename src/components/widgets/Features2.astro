@@ -9,6 +9,7 @@ const {
   subtitle = await Astro.slots.render('subtitle'),
   tagline = await Astro.slots.render('tagline'),
   items = [],
+  href = [],
   columns = 3,
   defaultIcon,
 
@@ -23,6 +24,7 @@ const {
   <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline as Record<string, string>} />
   <ItemGrid2
     items={items}
+    href={href}
     columns={columns}
     defaultIcon={defaultIcon}
     classes={{
