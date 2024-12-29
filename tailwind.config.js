@@ -7,6 +7,7 @@ export default {
   theme: {
     colors: {
       primary: 'var(--aw-color-primary)',
+      transparent: 'transparent',
     },
     extend: {
       colors: {
@@ -15,12 +16,11 @@ export default {
         accent: 'var(--aw-color-accent)',
         default: 'var(--aw-color-text-default)',
         muted: 'var(--aw-color-text-muted)',
-        // Add default gray scale here
         gray: {
           100: '#f7fafc',
           200: '#edf2f7',
           300: '#e2e8f0',
-          400: '#cbd5e0',  // this is the default gray-400
+          400: '#cbd5e0',
           500: '#a0aec0',
           600: '#718096',
           700: '#4a5568',
