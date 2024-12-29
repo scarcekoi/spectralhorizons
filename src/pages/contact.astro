@@ -19,19 +19,27 @@ const metadata = {
     items={[
       {
         title: 'Email',
-        description: 'whovianwriters2020@gmail.com',
-        href: 'mailto:https://spectralhorizons.bandcamp.com/',
+        description: (
+          <a href="mailto:whovianwriters2020@gmail.com">whovianwriters2020@gmail.com</a>
+        ),
         icon: 'tabler:mail',
       },
       {
         title: 'Twitter',
-        description: '@SpectralHorizon',
+        description: (
+          <a href="https://twitter.com/SpectralHorizon" target="_blank" rel="noopener noreferrer">
+            @SpectralHorizon
+          </a>
+        ),
         icon: 'tabler:brand-twitter',
       },
       {
         title: 'Bandcamp',
-        description: 'https://spectralhorizons.bandcamp.com/',
-        href: 'https://spectralhorizons.bandcamp.com/',
+        description: (
+          <a href="https://spectralhorizons.bandcamp.com/" target="_blank" rel="noopener noreferrer">
+            https://spectralhorizons.bandcamp.com/
+          </a>
+        ),
         icon: 'tabler:brand-bandcamp',
       },
     ]}
