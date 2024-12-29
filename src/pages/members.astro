@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+
 import HeroText from '~/components/widgets/HeroText.astro';
-import Members from '~/components/widgets/Members.astro';  // Import the widget
 
 const members = [
   { id: 0, name: "John Doe", role: "Developer", avatar: "https://i.pravatar.cc/100?img=1" },
@@ -16,11 +16,71 @@ const metadata = {
   title: 'Members',
 };
 ---
-
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
-  <HeroText tagline="Members" title="Meet the Spectral Horizons Team" />
 
-  <!-- Members Widget ******************* -->
-  <Members members={members} />  <!-- Pass the members data to the widget -->
+  <HeroText tagline="Members" title="Meet the Spectral Horizons Team" />
+  
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Members</title>
+      <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .member-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+        .member-card:hover {
+            transform: translateY(-5px);
+        }
+        .member-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .member-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .member-role {
+            color: #666;
+        }
+      </style>
+    </head>
+    <body>
+      <h1>Our Team Members</h1>
+      <div class="members-grid">
+        {members.map((member) => (
+            <a href={`/members/${member.id}`} class="member-card">
+                <img src={member.avatar} alt={`Avatar of ${member.name}`} class="member-avatar" />
+                <div class="member-name">{member.name}</div>
+                <div class="member-role">{member.role}</div>
+            </a>
+        ))}
+      </div>
+    </body>
+  </html>
 </Layout>
