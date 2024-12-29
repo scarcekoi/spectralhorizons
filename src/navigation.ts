@@ -3,26 +3,8 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Homes',
+      text: 'Home',
       href: getPermalink('/homes'),
-      links: [
-        {
-          text: 'SaaS',
-          href: getPermalink('/homes/saas'),
-        },
-        {
-          text: 'Startup',
-          href: getPermalink('/homes/startup'),
-        },
-        {
-          text: 'Mobile App',
-          href: getPermalink('/homes/mobile-app'),
-        },
-        {
-          text: 'Personal',
-          href: getPermalink('/homes/personal'),
-        },
-      ],
     },
     {
       text: 'Pages',
@@ -167,8 +149,8 @@ export const footerData = {
     },
   ],
   socialLinks: [
-    { ariaLabel: 'Youtube', icon: 'tabler:brand-youtube', href: 'https://twitter.com/SpectralHorizon' },
-    { ariaLabel: 'Twitter', icon: 'tabler:brand-twitter', href: 'https://youtube.com/@spectralhorizons' },
+    { ariaLabel: 'Youtube', icon: 'tabler:brand-youtube', href: 'https://youtube.com/@spectralhorizons' },
+    { ariaLabel: 'Twitter', icon: 'tabler:brand-twitter', href: 'https://twitter.com/SpectralHorizon' },
     { ariaLabel: 'Bandcamp', icon: 'tabler:brand-bandcamp', href: 'https://spectralhorizons.bandcamp.com' },
   ],
 };
