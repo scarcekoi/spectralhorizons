@@ -71,6 +71,7 @@ export const footerData = {
   socialLinks: [
     { ariaLabel: 'Youtube', icon: 'tabler:brand-youtube', href: 'https://youtube.com/@spectralhorizons' },
     { ariaLabel: 'Twitter', icon: 'tabler:brand-twitter', href: 'https://twitter.com/SpectralHorizon' },
+    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://instagram.com/spectralhorizons' },
     { ariaLabel: 'Bandcamp', icon: 'tabler:brand-bandcamp', href: 'https://spectralhorizons.bandcamp.com' },
   ],
 };
