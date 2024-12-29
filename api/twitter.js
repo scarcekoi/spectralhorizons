@@ -1,6 +1,6 @@
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
 
-module.exports = async (req, res) => {
+export default async function handler(req, res) {
   const bearerToken = 'YOUR_TWITTER_BEARER_TOKEN';
 
   try {
@@ -25,4 +25,4 @@ module.exports = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'An error occurred while fetching Twitter data' });
   }
-};
+}

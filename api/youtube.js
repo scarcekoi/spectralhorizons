@@ -1,6 +1,6 @@
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
 
-module.exports = async (req, res) => {
+export default async function handler(req, res) {
   const apiKey = 'AIzaSyDGi1JBTHwYeIbT_eHTlzafzUDdmP5dKnE';
   const channelId = 'UCliYuAkUEmNhz9rYG-xmitQ';
 
@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
 
     const data = await response.json();
     const stats = data.items[0].statistics;
-    
+
     res.status(200).json({
       subscribers: stats.subscriberCount,
       views: stats.viewCount,
@@ -21,4 +21,4 @@ module.exports = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'An error occurred while fetching YouTube data' });
   }
-};
+}
