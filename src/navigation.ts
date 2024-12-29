@@ -4,7 +4,7 @@ export const headerData = {
   links: [
     {
       text: 'Home',
-      href: '#',
+      href: 'https://spectralhorizons.vercel.app/',
     },
     {
       text: 'Members',
