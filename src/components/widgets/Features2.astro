@@ -2,7 +2,7 @@
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
 import ItemGrid2 from '~/components/ui/ItemGrid2.astro';
-import Icon from '~/components/ui/Icon.astro';  <!-- Add this import statement -->
+import Icon from '~/components/ui/Icon.astro';  // Add this import statement
 import type { Features as Props } from '~/types';
 
 const {
@@ -34,7 +34,7 @@ const {
       ...((classes?.items as Record<string, never>) ?? {}),
     }}
   >
-    <!-- Render the items with anchor tags or plain text -->
+    // Render the items with anchor tags or plain text
     <ul>
       {items.map((item) => (
         <li key={item.title} class="flex flex-col items-start">
@@ -48,7 +48,7 @@ const {
               item.description
             )}
           </p>
-          <Icon name={item.icon} /> <!-- Icon rendering -->
+          <Icon name={item.icon} /> {/* Icon rendering */}
         </li>
       ))}
     </ul>
