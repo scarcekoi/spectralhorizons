@@ -11,7 +11,7 @@ metadata:
   title:
     default: Spectral Horizons
     template: '%s | Spectral Horizons'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  description: "\U0001F680 Spectral Horizons is a group of writers, artists, composers, editors, and actors who create original Doctor Who audio dramas of all shapes and sizes!"
   robots:
     index: true
     follow: true
