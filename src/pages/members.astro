@@ -1,0 +1,72 @@
+---
+// Astro component script section
+const members = [
+  { id: 1, name: "John Doe", role: "Developer", avatar: "/placeholder.svg?height=100&width=100" },
+  { id: 2, name: "Jane Smith", role: "Designer", avatar: "/placeholder.svg?height=100&width=100" },
+  { id: 3, name: "Mike Johnson", role: "Manager", avatar: "/placeholder.svg?height=100&width=100" },
+  { id: 4, name: "Emily Brown", role: "Marketing", avatar: "/placeholder.svg?height=100&width=100" },
+  { id: 5, name: "Chris Lee", role: "Support", avatar: "/placeholder.svg?height=100&width=100" },
+  { id: 6, name: "Sarah Wilson", role: "HR", avatar: "/placeholder.svg?height=100&width=100" },
+];
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Members</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .member-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .member-card:hover {
+            transform: translateY(-5px);
+        }
+        .member-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .member-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .member-role {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Our Team Members</h1>
+    <div class="members-grid">
+        {members.map((member) => (
+            <a href={`/profile/${member.id}`} class="member-card">
+                <img src={member.avatar} alt={member.name} class="member-avatar" />
+                <div class="member-name">{member.name}</div>
+                <div class="member-role">{member.role}</div>
+            </a>
+        ))}
+    </div>
+</body>
+</html>
