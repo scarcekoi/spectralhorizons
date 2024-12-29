@@ -18,6 +18,10 @@ export const headerData = {
       text: 'About Us',
       href: 'about',
     },
+    {
+      text: 'Contact Us',
+      href: 'contact',
+    },
   ],
 };
 
@@ -56,15 +60,13 @@ export const footerData = {
       ],
     },
     {
-      title: 'Company',
+      title: 'Pages',
       links: [
-        { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Careers', href: '#' },
-        { text: 'Press', href: '#' },
-        { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
-        { text: 'Shop', href: '#' },
+        { text: 'Home', href: 'https://spectralhorizons.vercel.app/' },
+        { text: 'Members', href: 'members' },
+        { text: 'Blog', href: 'blog' },
+        { text: 'About Us', href: 'about' },
+        { text: 'Contact Us', href: 'contact' },
       ],
     },
   ],
