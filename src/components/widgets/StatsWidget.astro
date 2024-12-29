@@ -1,8 +1,8 @@
 ---
 import { useState, useEffect } from 'react';
-import WidgetWrapper from '../ui/WidgetWrapper.astro'; // Assuming the wrapper style is still needed
-import Headline from '../ui/Headline.astro'; // Assuming the headline component is still needed
-import { Icon } from 'astro-icon/components'; // Assuming you're using icons like in Stats.astro
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import Headline from '../ui/Headline.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
 <div id="stats-widget">
@@ -60,7 +60,7 @@ import { Icon } from 'astro-icon/components'; // Assuming you're using icons lik
   <script>
     // Fetch YouTube Stats
     const fetchYouTubeStats = async () => {
-      const apiKey = 'YOUR_YOUTUBE_API_KEY';  // Replace with your actual YouTube API key
+      const apiKey = 'AIzaSyDGi1JBTHwYeIbT_eHTlzafzUDdmP5dKnE';
       const channelId = 'UCwdf1LO9-Wj8qVxxFJdeIUQ';  // YouTube Channel ID for Spectral Horizons
       const response = await fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${channelId}&key=${apiKey}`);
       const data = await response.json();
