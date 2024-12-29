@@ -10,37 +10,28 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
-
   <HeroText tagline="Contact" title="Where to Reach Us!" />
 
   <!-- Features2 Widget ************** -->
-
   <Features2
     items={[
       {
         title: 'Email',
-        description: (
-          <a href="mailto:whovianwriters2020@gmail.com">whovianwriters2020@gmail.com</a>
-        ),
+        description: 'whovianwriters2020@gmail.com',
         icon: 'tabler:mail',
+        link: 'mailto:whovianwriters2020@gmail.com',
       },
       {
         title: 'Twitter',
-        description: (
-          <a href="https://twitter.com/SpectralHorizon" target="_blank" rel="noopener noreferrer">
-            @SpectralHorizon
-          </a>
-        ),
+        description: '@SpectralHorizon',
         icon: 'tabler:brand-twitter',
+        link: 'https://twitter.com/SpectralHorizon',
       },
       {
         title: 'Bandcamp',
-        description: (
-          <a href="https://spectralhorizons.bandcamp.com/" target="_blank" rel="noopener noreferrer">
-            https://spectralhorizons.bandcamp.com/
-          </a>
-        ),
+        description: 'https://spectralhorizons.bandcamp.com/',
         icon: 'tabler:brand-bandcamp',
+        link: 'https://spectralhorizons.bandcamp.com/',
       },
     ]}
   />
