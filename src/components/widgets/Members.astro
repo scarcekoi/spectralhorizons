@@ -1,0 +1,46 @@
+---
+const { members } = Astro.props;
+---
+
+<div class="members-grid">
+  {members.map((member) => (
+    <a href={`/members/${member.id}`} class="member-card">
+      <img src={member.avatar} alt={`Avatar of ${member.name}`} class="member-avatar" />
+      <div class="member-name">{member.name}</div>
+      <div class="member-role">{member.role}</div>
+    </a>
+  ))}
+</div>
+
+<style>
+  .members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  .member-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+  }
+  .member-card:hover {
+    transform: translateY(-5px);
+  }
+  .member-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  .member-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .member-role {
+    color: #666;
+  }
+</style>
