@@ -54,9 +54,9 @@ import { Icon } from 'astro-icon/components';
       return data;
     };
 
+    // Function to format numbers with commas using Intl.NumberFormat
     const formatNumberWithCommas = (number) => {
-      // Ensure the number is valid and format with commas
-      return number.toLocaleString();
+      return new Intl.NumberFormat().format(number);
     };
 
     const updateStats = async () => {
