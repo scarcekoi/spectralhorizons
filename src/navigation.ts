@@ -41,6 +41,16 @@ export const footerData = {
         { text: 'Contact Us', href: 'contact' },
       ],
     },
+    {
+      title: 'Members',
+      links: [
+        { text: 'John Doe', href: 'members/john_doe' },
+        { text: '1', href: 'members' },
+        { text: '2', href: 'members' },
+        { text: '3', href: 'members' },
+        { text: '4', href: 'members' },
+      ],
+    },
   ],
   socialLinks: [
     { ariaLabel: 'Youtube', icon: 'tabler:brand-youtube', href: 'https://youtube.com/@spectralhorizons' },
