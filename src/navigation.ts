@@ -7,10 +7,6 @@ export const headerData = {
       href: 'https://spectralhorizons.vercel.app/',
     },
     {
-      text: 'Members',
-      href: 'members',
-    },
-    {
       text: 'Stories',
       href: 'stories',
     },
@@ -35,20 +31,9 @@ export const footerData = {
       title: 'Pages',
       links: [
         { text: 'Home', href: 'https://spectralhorizons.vercel.app/' },
-        { text: 'Members', href: 'members' },
         { text: 'Blog', href: 'blog' },
         { text: 'About Us', href: 'about' },
         { text: 'Contact Us', href: 'contact' },
-      ],
-    },
-    {
-      title: 'Members',
-      links: [
-        { text: 'John Doe', href: 'members/john_doe' },
-        { text: '1', href: 'members' },
-        { text: '2', href: 'members' },
-        { text: '3', href: 'members' },
-        { text: '4', href: 'members' },
       ],
     },
   ],

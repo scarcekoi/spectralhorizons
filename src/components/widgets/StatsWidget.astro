@@ -28,7 +28,7 @@ import { Icon } from 'astro-icon/components';
           <Icon name="tabler:video" class="w-10 h-10" />  <!-- Video Icon -->
         </div>
         <div class="font-heading text-primary text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl" id="youtube-videos">
-          Loading...
+          Loading
         </div>
         <div class="text-sm font-medium uppercase tracking-widest text-gray-800 dark:text-slate-400 lg:text-base">YouTube Videos</div>
       </div>
@@ -74,7 +74,7 @@ import { Icon } from 'astro-icon/components';
         document.getElementById('youtube-views').textContent = formatNumberWithCommas(youtubeStats.views || 0);
       } else {
         console.error('Failed to fetch YouTube stats, retrying...');
-        setTimeout(updateStats, 3000); // Retry after 3 seconds
+        setTimeout(updateStats, 1000);
       }
     };
 
