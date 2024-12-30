@@ -7,48 +7,46 @@ import { Icon } from 'astro-icon/components';
 <div id="stats-widget">
   <WidgetWrapper id="dynamic-stats-widget" isDark={false} containerClass="max-w-6xl mx-auto" bg="">
 
-    <!-- Headline for Stats -->
     <Headline title="YouTube Statistics" />
 
-    <!-- Stats Layout -->
     <div class="flex flex-wrap justify-center -m-4 text-center">
-      <!-- YouTube Stats -->
       <div class="p-4 md:w-1/4 sm:w-1/2 w-full min-w-[220px] text-center md:border-r md:last:border-none dark:md:border-slate-500">
         <div class="flex items-center justify-center mx-auto mb-4 text-primary">
-          <Icon name="tabler:brand-youtube" class="w-10 h-10" />  <!-- YouTube Icon -->
+          <Icon name="tabler:brand-youtube" class="w-10 h-10" />
         </div>
         <div class="font-heading text-primary text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl" id="youtube-subscribers">
+          Loading...
         </div>
         <div class="text-sm font-medium uppercase tracking-widest text-gray-800 dark:text-slate-400 lg:text-base">YouTube Subscribers</div>
       </div>
 
       <div class="p-4 md:w-1/4 sm:w-1/2 w-full min-w-[220px] text-center md:border-r md:last:border-none dark:md:border-slate-500">
         <div class="flex items-center justify-center mx-auto mb-4 text-primary">
-          <Icon name="tabler:video" class="w-10 h-10" />  <!-- Video Icon -->
+          <Icon name="tabler:video" class="w-10 h-10" />
         </div>
         <div class="font-heading text-primary text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl" id="youtube-videos">
+          Loading...
         </div>
         <div class="text-sm font-medium uppercase tracking-widest text-gray-800 dark:text-slate-400 lg:text-base">YouTube Videos</div>
       </div>
 
       <div class="p-4 md:w-1/4 sm:w-1/2 w-full min-w-[220px] text-center md:border-r md:last:border-none dark:md:border-slate-500">
         <div class="flex items-center justify-center mx-auto mb-4 text-primary">
-          <Icon name="tabler:eye" class="w-10 h-10" />  <!-- Eye Icon for Views -->
+          <Icon name="tabler:eye" class="w-10 h-10" />
         </div>
         <div class="font-heading text-primary text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl" id="youtube-views">
+          Loading...
         </div>
         <div class="text-sm font-medium uppercase tracking-widest text-gray-800 dark:text-slate-400 lg:text-base">YouTube Views</div>
       </div>
     </div>
   </WidgetWrapper>
 
-  <!-- Client-side JS -->
   <script type="module">
     const fetchYouTubeStats = async () => {
       try {
         const response = await fetch('/api/youtube');
         const data = await response.json();
-        console.log(data);
         return data;
       } catch (error) {
         console.error('Error fetching YouTube stats:', error);
@@ -56,7 +54,6 @@ import { Icon } from 'astro-icon/components';
       }
     };
 
-    // Function to format numbers with commas using Intl.NumberFormat
     const formatNumberWithCommas = (number) => {
       return new Intl.NumberFormat().format(number);
     };
@@ -65,7 +62,6 @@ import { Icon } from 'astro-icon/components';
       const youtubeStats = await fetchYouTubeStats();
 
       if (youtubeStats) {
-        // Format numbers with commas
         document.getElementById('youtube-subscribers').textContent = formatNumberWithCommas(youtubeStats.subscribers || 0);
         document.getElementById('youtube-videos').textContent = formatNumberWithCommas(youtubeStats.videos || 0);
         document.getElementById('youtube-views').textContent = formatNumberWithCommas(youtubeStats.views || 0);
@@ -75,8 +71,7 @@ import { Icon } from 'astro-icon/components';
       }
     };
 
-    // Wait until the DOM is fully loaded before running the update
-    window.addEventListener('load', () => {
+    document.addEventListener('DOMContentLoaded', () => {
       updateStats();
     });
   </script>
