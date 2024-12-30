@@ -48,10 +48,15 @@ import { Icon } from 'astro-icon/components';
   <!-- Client-side JS -->
   <script type="module">
     const fetchYouTubeStats = async () => {
-      const response = await fetch('/api/youtube');
-      const data = await response.json();
-      console.log(data);
-      return data;
+      try {
+        const response = await fetch('/api/youtube');
+        const data = await response.json();
+        console.log(data);
+        return data;
+      } catch (error) {
+        console.error('Error fetching YouTube stats:', error);
+        return null;
+      }
     };
 
     // Function to format numbers with commas using Intl.NumberFormat
@@ -68,7 +73,8 @@ import { Icon } from 'astro-icon/components';
         document.getElementById('youtube-videos').textContent = formatNumberWithCommas(youtubeStats.videos || 0);
         document.getElementById('youtube-views').textContent = formatNumberWithCommas(youtubeStats.views || 0);
       } else {
-        console.error('Failed to fetch YouTube stats');
+        console.error('Failed to fetch YouTube stats, retrying...');
+        setTimeout(updateStats, 3000); // Retry after 3 seconds
       }
     };
 
