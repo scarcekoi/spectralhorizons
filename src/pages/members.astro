@@ -4,12 +4,12 @@ import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 
 const members = [
-  { id: 0, name: "John Doe", role: "Developer", avatar: "https://via.placeholder.com/100x100?text=Image+Unavailable" },
-  { id: 1, name: "Jane Smith", role: "Designer", avatar: "https://via.placeholder.com/100x100?text=Image+Unavailable" },
-  { id: 2, name: "Mike Johnson", role: "Manager", avatar: "https://via.placeholder.com/100x100?text=Image+Unavailable" },
-  { id: 3, name: "Emily Brown", role: "Marketing", avatar: "https://via.placeholder.com/100x100?text=Image+Unavailable" },
-  { id: 4, name: "Chris Lee", role: "Support", avatar: "https://via.placeholder.com/100x100?text=Image+Unavailable" },
-  { id: 5, name: "Sarah Wilson", role: "HR", avatar: "https://via.placeholder.com/100x100?text=Image+Unavailable" }
+  { id: john_doe, name: "John Doe", role: "Developer", avatar: "https://via.placeholder.com/100x100?text=Image+Unavailable" },
+  { id: jane_smith, name: "Jane Smith", role: "Designer", avatar: "https://via.placeholder.com/100x100?text=Image+Unavailable" },
+  { id: mike_johnson, name: "Mike Johnson", role: "Manager", avatar: "https://via.placeholder.com/100x100?text=Image+Unavailable" },
+  { id: emily_brown, name: "Emily Brown", role: "Marketing", avatar: "https://via.placeholder.com/100x100?text=Image+Unavailable" },
+  { id: chris_lee, name: "Chris Lee", role: "Support", avatar: "https://via.placeholder.com/100x100?text=Image+Unavailable" },
+  { id: sarah_wilson, name: "Sarah Wilson", role: "HR", avatar: "https://via.placeholder.com/100x100?text=Image+Unavailable" }
 ];
 
 const metadata = {
@@ -22,7 +22,6 @@ const metadata = {
   <HeroText tagline="Members" title="Meet the Spectral Horizons Team" />
   
   <html lang="en">
-    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Members</title>
@@ -69,7 +68,6 @@ const metadata = {
             color: #666;
         }
       </style>
-    </head>
     <body>
       <h1>Our Team Members</h1>
       <div class="members-grid">
