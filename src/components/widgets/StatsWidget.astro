@@ -1,5 +1,4 @@
 ---
-import { useState, useEffect } from 'react';
 import WidgetWrapper from '../ui/WidgetWrapper.astro';
 import Headline from '../ui/Headline.astro';
 import { Icon } from 'astro-icon/components';
@@ -46,7 +45,8 @@ import { Icon } from 'astro-icon/components';
     </div>
   </WidgetWrapper>
 
-  <script>
+  <!-- Client-side JS -->
+  <script type="module">
     const fetchYouTubeStats = async () => {
       const response = await fetch('/api/youtube');
       const data = await response.json();
@@ -57,12 +57,18 @@ import { Icon } from 'astro-icon/components';
     const updateStats = async () => {
       const youtubeStats = await fetchYouTubeStats();
 
-      document.getElementById('youtube-subscribers').textContent = youtubeStats.subscribers;
-      document.getElementById('youtube-videos').textContent = youtubeStats.videos;
-      document.getElementById('youtube-views').textContent = youtubeStats.views;
+      if (youtubeStats) {
+        document.getElementById('youtube-subscribers').textContent = youtubeStats.subscribers || 'No data';
+        document.getElementById('youtube-videos').textContent = youtubeStats.videos || 'No data';
+        document.getElementById('youtube-views').textContent = youtubeStats.views || 'No data';
+      } else {
+        console.error('Failed to fetch YouTube stats');
+      }
     };
 
-  useEffect(() => {
-    updateStats();
-  }, []);
-</script>
+    // Wait until the DOM is fully loaded before running the update
+    window.addEventListener('load', () => {
+      updateStats();
+    });
+  </script>
+</div>
