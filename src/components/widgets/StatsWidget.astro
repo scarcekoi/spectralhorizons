@@ -62,7 +62,7 @@ import { Icon } from 'astro-icon/components';
       document.getElementById('youtube-views').textContent = youtubeStats.views;
     };
 
-    // Call the update function when the page loads
-    document.addEventListener('DOMContentLoaded', updateStats);
-  </script>
-</div>
+  useEffect(() => {
+    updateStats();
+  }, []);
+</script>
