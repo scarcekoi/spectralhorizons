@@ -46,6 +46,7 @@ import { Icon } from 'astro-icon/components';
     const fetchYouTubeStats = async () => {
       try {
         const response = await fetch('/api/youtube');
+        if (!response.ok) throw new Error('Failed to fetch data');
         const data = await response.json();
         return data;
       } catch (error) {
@@ -59,15 +60,27 @@ import { Icon } from 'astro-icon/components';
     };
 
     const updateStats = async () => {
-      const youtubeStats = await fetchYouTubeStats();
+      let retries = 0;
+      const maxRetries = 5;
+      let youtubeStats;
+
+      while (retries < maxRetries) {
+        youtubeStats = await fetchYouTubeStats();
+        if (youtubeStats) break;
+        retries++;
+        console.log(`Retrying fetch attempt ${retries}...`);
+        await new Promise(resolve => setTimeout(resolve, 2000));  // Wait 2 seconds before retrying
+      }
 
       if (youtubeStats) {
         document.getElementById('youtube-subscribers').textContent = formatNumberWithCommas(youtubeStats.subscribers || 0);
         document.getElementById('youtube-videos').textContent = formatNumberWithCommas(youtubeStats.videos || 0);
         document.getElementById('youtube-views').textContent = formatNumberWithCommas(youtubeStats.views || 0);
       } else {
-        console.error('Failed to fetch YouTube stats, retrying...');
-        setTimeout(updateStats, 1000);
+        console.error('Failed to fetch YouTube stats after multiple attempts.');
+        document.getElementById('youtube-subscribers').textContent = "Error loading data.";
+        document.getElementById('youtube-videos').textContent = "Error loading data.";
+        document.getElementById('youtube-views').textContent = "Error loading data.";
       }
     };
 
