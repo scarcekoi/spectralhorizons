@@ -31,6 +31,7 @@ export const footerData = {
       title: 'Pages',
       links: [
         { text: 'Home', href: 'https://spectralhorizons.vercel.app/' },
+        { text: 'Stories', href: 'stories' },
         { text: 'Blog', href: 'blog' },
         { text: 'About Us', href: 'about' },
         { text: 'Contact Us', href: 'contact' },
